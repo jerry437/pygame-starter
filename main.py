@@ -2,18 +2,14 @@ import pygame
 pygame.init()
 
 win = pygame.display.set_mode((800, 600))
-img = pygame.image.load('assets/forest-assets/door.png').convert()
-font = pygame.font.sysfont("Arial,72")
-# Load the spritesheet
-spritesheet = pygame.image.load('assets/gfx/objects.png').convert()
-text = font.render("welcome")
-# Create the first image
-smol_img = pygame.Surface([16, 16]).convert()
-smol_img.blit(spritesheet, (0, 0), (0, 0, 16, 16))
+img = pygame.image.load('background_18.png').convert()
+img = pygame.transform.scale(img, (800, 600))
+# Create the font
 
-# Create the second image
-smolr_img = pygame.Surface([16, 16]).convert()
-smolr_img.blit(spritesheet, (0, 0), (16, 0, 16, 16))
+font = pygame.font.SysFont("arial", 50)
+
+# Create the text object
+text = font.render("welcome press start", True, (255, 255, 255))
 
 run = True
 while run:
@@ -22,9 +18,8 @@ while run:
             run = False
 
     win.fill((0, 0, 0))
-    win.blit(img, (400, 300))
-    win.blit(smol_img, (100, 100))
-    win.blit(smolr_img, (150, 100))
+    win.blit(img, (0, 0))
+    win.blit(text, (200, 200))
 
 
     pygame.display.update()
