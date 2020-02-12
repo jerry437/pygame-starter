@@ -9,7 +9,7 @@ img = pygame.transform.scale(img, (800, 600))
 font = pygame.font.SysFont("arial", 50)
 
 # Create the text object
-text = font.render("welcome press start", True, (255, 255, 255))
+text = font.render("welcome press space", True, (255, 255, 255))
 
 run = True
 while run:
