@@ -1,27 +1,32 @@
-import pygame # import library
+import pygame
 pygame.init()
 
-# Create the window
 win = pygame.display.set_mode((800, 600))
-img = pygame.image.load("assets/forest-assets/door.png").convert()
-x = 0
+img = pygame.image.load('assets/forest-assets/door.png').convert()
+font = pygame.font.sysfont("Arial,72")
+# Load the spritesheet
+spritesheet = pygame.image.load('assets/gfx/objects.png').convert()
+text = font.render("welcome")
+# Create the first image
+smol_img = pygame.Surface([16, 16]).convert()
+smol_img.blit(spritesheet, (0, 0), (0, 0, 16, 16))
 
-y = 0
+# Create the second image
+smolr_img = pygame.Surface([16, 16]).convert()
+smolr_img.blit(spritesheet, (0, 0), (16, 0, 16, 16))
+
 run = True
 while run:
-  for event in pygame.event.get():
-    if event.type == pygame.QUIT:
-      run = False
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            run = False
 
-# Game code starts here ---------------------
-  win.fill((0, 0, 0))
-  x += 1
-  y +=0.1
-  # Draw a rectangle
-  pygame.draw.rect(win, (0, 204, 102), (x, y, 200, 200))
-  win.blit(img, (200, 300))
-  #Update the display
-  pygame.display.update()
+    win.fill((0, 0, 0))
+    win.blit(img, (400, 300))
+    win.blit(smol_img, (100, 100))
+    win.blit(smolr_img, (150, 100))
 
-print("Ending game")
+
+    pygame.display.update()
+
 pygame.quit()
