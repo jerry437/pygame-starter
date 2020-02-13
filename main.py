@@ -17,10 +17,12 @@ while run:
         if event.type == pygame.QUIT:
             run = False
 
-    win.fill((0, 0, 0))
+    #win.fill((0, 0, 0))
     win.blit(img, (0, 0))
     win.blit(text, (200, 200))
-
+    keys=pygame.key.get_pressed()
+    if keys[pygame.K_SPACE]:
+      exit
 
     pygame.display.update()
 
