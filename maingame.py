@@ -18,7 +18,7 @@ while run:
   #keys = pygame.key.get_pressed()
   #if keys[pygame.K_LEFT]:
    # x -= 1
-
+   #DRAWS THE IMAGE,TEXT
     win.fill((0, 0, 0))
     win.blit(background,(0,0))
     win.blit(img, (x, y))
