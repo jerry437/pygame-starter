@@ -1,6 +1,6 @@
 import pygame
 pygame.init()
-clock = pygame.time.clock()
+#clock = pygame.time.clock()
 win = pygame.display.set_mode((800, 600))
 img = pygame.image.load('background_18.png').convert()
 img = pygame.transform.scale(img, (800, 600))
@@ -16,8 +16,8 @@ while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
-    clock.tick(120)
-    #win.fill((0, 0, 0))
+    #clock.tick(120)
+    win.fill((0, 0, 0))
     win.blit(img, (0, 0))
     win.blit(text, (200, 200))
     keys=pygame.key.get_pressed()

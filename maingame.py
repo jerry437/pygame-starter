@@ -15,7 +15,7 @@ while run:
         if event.type == pygame.QUIT:
             run = False
 
-    if img < 400:
+    if img > 400:
         hp -= 1
 
 
