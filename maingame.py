@@ -6,10 +6,13 @@ background = pygame.image.load('assets/background2.png').convert()
 img = pygame.image.load('assets/hero/sliced/idle-2.png')
 img = pygame.transform.scale(img, (50, 50))
 background = pygame.transform.scale(background, (800, 600))
-x = 200
-y = 200
-hp = 100
-run = True
+player = {
+    "x" = 200
+    "y" = 200
+    "hp" = 100
+    "run" = True
+
+}
 while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
