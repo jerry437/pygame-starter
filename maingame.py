@@ -7,6 +7,7 @@ img = pygame.image.load('assets/hero/sliced/idle-2.png')
 img = pygame.transform.scale(img, (50, 50))
 background = pygame.transform.scale(background, (800, 600))
 player = {
+    "img" = pygame.image.load('assets/hero/sliced/idle-2.png')
     "x" = 200
     "y" = 200
     "hp" = 100
@@ -24,21 +25,21 @@ while run:
 
     keys = pygame.key.get_pressed()
     if keys[pygame.K_LEFT]:
-        x -= 1
+       player["x"]-= 1
     keys = pygame.key.get_pressed()
     if keys[pygame.K_RIGHT]:
-        x += 1
+        player["x"] += 1
     keys = pygame.key.get_pressed()
     if keys[pygame.K_UP]:
-        x += 1
+        player["y"] += 1
     keys = pygame.key.get_pressed()
     if keys[pygame.K_DOWN]:
-        x -= 1
+        player["y"] -= 1
     # DRAWS THE IMAGE,TEXT
         win.fill((0, 0, 0))
         win.blit(background,(0,0))
-        win.blit(img, (x, y))
-        win.blit(hp(0,3))
+        win.blit(player["img"], (player["x"],player ["y"]))
+        win.blit(player["hp"](0,3))
 
     pygame.display.update()
 
