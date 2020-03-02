@@ -24,9 +24,10 @@ while run:
             run = False
 
     win.fill((0, 0, 0))
-    win.blit(smol_img, (0, 0))
-    win.blit(smol_img, (40, 0))
-
+    for y in range (10):
+        for x in range (15):
+            win.blit(smol_img, (x*64, y*64))
+    
 
     pygame.display.update()
 
